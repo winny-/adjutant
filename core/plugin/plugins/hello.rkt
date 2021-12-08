@@ -1,0 +1,11 @@
+#lang racket/unit
+(require "../main.rkt")
+(import)
+(export plugin^)
+(define dependencies '("sayer"))
+(define version "0.1")
+(define description "Greet users")
+(define (load!)
+  (printf "Hello ~a loaded.\n" version))
+(define (unload!)
+  (printf "Hello ~a unloaded.\n" version))
