@@ -1,0 +1,28 @@
+* Yet another chat bot
+
+** Method of conception
+   I've tried making a Racket-based chat bot a few times before.  It did work,
+   but my initial attempts didn't consider things like plugins, plugin
+   dependencies, concurrency, or abstracting away underlying chat protocols
+   away.
+
+   Instead this attempt tried to approach the initial implementation with
+   emphasis on architecture.  So it probably won't run, probably.
+
+** Design ideas
+   - Pub/sub message passing model for events
+   - Services on top of the Pub/sub model that can respond to requests/provide
+     data (presence, etc)
+   - Mostly hot-reloadable code components
+   - A plugin system that can be configured by the user
+   - An reasonably easy development flow for new plugins
+
+** Omissions
+   - Trivial UI at this point, the bot should be mostly pluggable anyway, so
+     it'll be easy to re-write.
+   - Configuration system will come later.
+   - No support for running plugins in other places (different processes).
+   - Error messages will not be addressed at this point.
+
+** License
+   AGPLv3 for now.
